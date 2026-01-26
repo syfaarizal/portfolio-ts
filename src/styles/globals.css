@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: #050505; /* Deep black */
+    color: #f5f5f5; /* Off-white */
+  }
+
+  body {
+    @apply antialiased font-sans;
+  }
+}
+
+/* Custom Scrollbar - Cyberpunk / Minimalist Vibe */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333; 
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e53935; /* Soft Red pada hover */
+}
