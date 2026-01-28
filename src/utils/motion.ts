@@ -31,3 +31,58 @@ export const staggerContainer: Variants = {
     },
   },
 };
+
+export const slideIn = (direction: Direction = "left", delay: number = 0): Variants => ({
+  hidden: {
+    x: direction === "left" ? "-100%" : direction === "right" ? "100%" : 0,
+    y: direction === "up" ? "100%" : direction === "down" ? "-100%" : 0,
+    opacity: 0,
+  },
+  show: {
+    x: 0,
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      stiffness: 60,
+      damping: 20,
+      delay: delay,
+    },
+  },
+});
+
+export const scaleIn = (delay: number = 0): Variants => ({
+  hidden: {
+    scale: 0,
+    opacity: 0,
+  },
+  show: {
+    scale: 1,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      stiffness: 100,
+      damping: 15,
+      delay: delay,
+    },
+  },
+});
+
+export const rotateIn = (delay: number = 0): Variants => ({
+  hidden: {
+    rotate: -180,
+    opacity: 0,
+    scale: 0.5,
+  },
+  show: {
+    rotate: 0,
+    opacity: 1,
+    scale: 1,
+    transition: {
+      type: "spring",
+      stiffness: 80,
+      damping: 20,
+      delay: delay,
+    },
+  },
+});
