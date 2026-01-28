@@ -86,3 +86,32 @@ export const rotateIn = (delay: number = 0): Variants => ({
     },
   },
 });
+
+export const smoothFadeIn = (direction: Direction = "up", delay: number = 0): Variants => ({
+  hidden: {
+    opacity: 0,
+    y: direction === "up" ? 20 : direction === "down" ? -20 : 0,
+    x: direction === "left" ? 20 : direction === "right" ? -20 : 0,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    x: 0,
+    transition: {
+      type: "tween",
+      duration: 0.6,
+      delay: delay,
+      ease: [0.25, 0.1, 0.25, 1], // Smooth ease out
+    },
+  },
+});
+
+export const smoothStaggerContainer: Variants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.1,
+    },
+  },
+};
