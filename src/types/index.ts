@@ -22,3 +22,11 @@ export interface StatCardProps {
   label: string;
   value: number;
 }
+
+export interface ProjectType {
+  id: number;
+  title: string;
+  tech: string[];
+  description: string; // Ditambahkan
+  year: string; // Ditambahkan
+}
